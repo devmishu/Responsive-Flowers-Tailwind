@@ -1,9 +1,6 @@
 # Node modules
 node_modules/
 
-# Tailwind build output (optional)
-dist/
-build/
 
 # Environment files
 .env
