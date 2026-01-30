@@ -14,31 +14,46 @@
 
 <body class="inter">
     <!--================================ HEADER SECTION START =========================================== -->
-    <header>
+    <header class="">
         <!-- navbar -->
         <nav class=" container mx-auto px-5 mt-9 flex justify-between items-center">
             <!-- nab logo -->
-            <img src="./assets/logo.png" alt="logo" class="w-full max-w-34">
+            <img src="./assets/logo.png" alt="logo" class="w-full max-w-35">
             <!-- nav links -->
             <ul class="gap-12 hidden sm:flex">
-                <li><a href="#" class="transition-[0.7s] font-medium  hover:text-[#8987A1]">Home</a></li>
-                <li><a href="#" class="transition-[0.7s] font-medium  hover:text-[#8987A1]">Shop</a></li>
-                <li><a href="#" class="transition-[0.7s] font-medium  hover:text-[#8987A1]">About us</a></li>
-                <li><a href="#" class="transition-[0.7s] font-medium  hover:text-[#8987A1]"><i
+                <li><a href="#" class="transition duration-500 font-medium  hover:text-[#8987A1]">Home</a></li>
+                <li><a href="#" class="transition duration-500 font-medium  hover:text-[#8987A1]">Shop</a></li>
+                <li><a href="#" class="transition duration-500 font-medium  hover:text-[#8987A1]">About us</a></li>
+                <li><a href="#" class="transition duration-500 font-medium  hover:text-[#8987A1]" aria-label="Cart"><i
                             class="fa-solid fa-cart-arrow-down"></i> Cart ($56)</a></li>
             </ul>
             <!-- toggle menu -->
-            <div class="sm:hidden">
-                <i class="fa-solid fa-bars text-5xl "></i>
-            </div>
+            <button class="sm:hidden">
+                <i class="fa-solid fa-bars text-2xl "></i>
+            </button>
         </nav>
     </header>
     <!--================================ HEADER SECTION END =========================================== -->
 
-
-
     <!--================================ MAIN SECTION START =========================================== -->
-    <main></main>
+    <main>
+        <!-- ----------------------------------- hero section start---------------------- -->
+        <section class="">
+            <div class="container mx-auto px-5 justify-between items-end sm:flex sm:justify-between sm:items-center sm:gap-5 xl:flex-row-reverse xl:items-end xl:mt-30">
+                <!-- hero image -->
+                <img src="./assets/hero-flower.png" alt="hero image" class="sm:max-w-3/5 xl:w-full">
+
+                <!-- hero content -->
+                <div class="max-w-90 mt-7 sm:w-2/5 xl:max-w-full">
+                    <h1 class="text-2xl font-bold color-primary sm:text-3xl md:text-5xl xl:text-6xl">ALWAYS FRESH <span class="text-secondary">FLOWERS</span></h1>
+                    <p class="text-rgb-text mt-3 xl:text-2xl">Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh flowers that are perfect for any occasion. </p>
+                </div>
+                
+            </div>
+        </section>
+        <!-- ----------------------------------- hero section end---------------------- -->
+
+    </main>
     <!--================================ MAIN SECTION END =========================================== -->
 
 

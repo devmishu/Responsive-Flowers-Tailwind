@@ -9,9 +9,12 @@
 
 
 @layer components {
-    /*  {
+    /* * {
         border: 1px solid red;
     } */
+    body{
+        font-size: 14px;
+    }
 
     .inter {
         font-family: "Inter", sans-serif;
@@ -26,4 +29,10 @@
     h6 {
         font-family: "Noto Serif", serif;
     }
+}
+
+@theme {
+    --color-primary: #000000;
+    --color-secondary: #E95A08;
+    --color-rgb-text: rgba(0, 0, 0, 0.5);
 }
