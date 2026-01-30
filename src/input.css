@@ -12,6 +12,7 @@
     --color-primary: #000000;
     --color-secondary: #E95A08;
     --color-rgb-text: rgba(0, 0, 0, 0.5);
+    --color-white: #ffffff;
 }
 
 /* ======================
@@ -54,5 +55,13 @@
     .section-header-tagline {
         @apply mt-3 xl:text-2xl;
         color: var(--color-rgb-text);
+    }
+    .plant-card{
+        @apply flex flex-col items-center gap-7;
+    }
+    /* button System */
+    .button {
+        @apply uppercase w-full text-center bg-secondary text-white py-7 text-[16px] font-semibold;
+
     }
 }

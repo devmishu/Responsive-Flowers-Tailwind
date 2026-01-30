@@ -9,6 +9,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-white: #ffffff;
     --spacing: 0.25rem;
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
@@ -19,6 +20,7 @@
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
     --font-weight-medium: 500;
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -202,14 +204,23 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
   .mt-7 {
     margin-top: calc(var(--spacing) * 7);
   }
   .mt-9 {
     margin-top: calc(var(--spacing) * 9);
   }
+  .mb-20 {
+    margin-bottom: calc(var(--spacing) * 20);
+  }
   .flex {
     display: flex;
+  }
+  .grid {
+    display: grid;
   }
   .hidden {
     display: none;
@@ -223,6 +234,12 @@
   .max-w-90 {
     max-width: calc(var(--spacing) * 90);
   }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
   .items-center {
     align-items: center;
   }
@@ -232,11 +249,23 @@
   .justify-between {
     justify-content: space-between;
   }
+  .gap-7 {
+    gap: calc(var(--spacing) * 7);
+  }
   .gap-12 {
     gap: calc(var(--spacing) * 12);
   }
+  .gap-x-5 {
+    column-gap: calc(var(--spacing) * 5);
+  }
+  .gap-y-7 {
+    row-gap: calc(var(--spacing) * 7);
+  }
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
+  }
+  .text-center {
+    text-align: center;
   }
   .align-middle {
     vertical-align: middle;
@@ -244,6 +273,9 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-\[16px\] {
+    font-size: 16px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -298,6 +330,11 @@
       max-width: calc(3/5 * 100%);
     }
   }
+  .sm\:grid-cols-3 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
   .sm\:items-center {
     @media (width >= 40rem) {
       align-items: center;
@@ -325,6 +362,11 @@
       line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
+  .xl\:mt-12 {
+    @media (width >= 80rem) {
+      margin-top: calc(var(--spacing) * 12);
+    }
+  }
   .xl\:mt-30 {
     @media (width >= 80rem) {
       margin-top: calc(var(--spacing) * 30);
@@ -338,6 +380,11 @@
   .xl\:max-w-full {
     @media (width >= 80rem) {
       max-width: 100%;
+    }
+  }
+  .xl\:grid-cols-4 {
+    @media (width >= 80rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
   .xl\:flex-row-reverse {
@@ -412,6 +459,23 @@
       line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
     color: var(--color-rgb-text);
+  }
+  .plant-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--spacing) * 7);
+  }
+  .button {
+    width: 100%;
+    background-color: var(--color-secondary);
+    padding-block: calc(var(--spacing) * 7);
+    text-align: center;
+    font-size: 16px;
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    text-transform: uppercase;
   }
 }
 @property --tw-font-weight {
