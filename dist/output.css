@@ -1,6 +1,6 @@
 /*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100..900&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -24,6 +24,7 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-primary: #000000;
     --color-secondary: #E95A08;
     --color-rgb-text: rgba(0, 0, 0, 0.5);
   }
@@ -213,9 +214,6 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
   .w-full {
     width: 100%;
   }
@@ -224,12 +222,6 @@
   }
   .max-w-90 {
     max-width: calc(var(--spacing) * 90);
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .items-center {
     align-items: center;
@@ -243,12 +235,11 @@
   .gap-12 {
     gap: calc(var(--spacing) * 12);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
+  }
+  .align-middle {
+    vertical-align: middle;
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -262,18 +253,14 @@
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
   }
+  .text-primary {
+    color: var(--color-primary);
+  }
   .text-rgb-text {
     color: var(--color-rgb-text);
   }
   .text-secondary {
     color: var(--color-secondary);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
@@ -306,24 +293,9 @@
       width: calc(2/5 * 100%);
     }
   }
-  .sm\:max-w-2\/5 {
-    @media (width >= 40rem) {
-      max-width: calc(2/5 * 100%);
-    }
-  }
   .sm\:max-w-3\/5 {
     @media (width >= 40rem) {
       max-width: calc(3/5 * 100%);
-    }
-  }
-  .sm\:max-w-90 {
-    @media (width >= 40rem) {
-      max-width: calc(var(--spacing) * 90);
-    }
-  }
-  .sm\:max-w-full {
-    @media (width >= 40rem) {
-      max-width: 100%;
     }
   }
   .sm\:items-center {
@@ -391,30 +363,60 @@
     }
   }
 }
-@layer components {
+@layer base {
   body {
     font-size: 14px;
-  }
-  .inter {
     font-family: "Inter", sans-serif;
+    color: var(--color-primary);
   }
-  .noto, h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: "Noto Serif", serif;
   }
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+@layer components {
+  .font-inter {
+    font-family: "Inter", sans-serif;
+  }
+  .font-noto {
+    font-family: "Noto Serif", serif;
+  }
+  .section-header-container {
+    margin-inline: auto;
+    margin-top: calc(var(--spacing) * 7);
+    text-align: center;
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 200);
+    }
+    @media (width >= 80rem) {
+      margin-top: calc(var(--spacing) * 30);
+    }
+    @media (width >= 80rem) {
+      max-width: calc(var(--spacing) * 225);
+    }
+  }
+  .section-header-title {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    @media (width >= 80rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .section-header-tagline {
+    margin-top: calc(var(--spacing) * 3);
+    @media (width >= 80rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+    color: var(--color-rgb-text);
+  }
 }
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-duration {
   syntax: "*";
@@ -423,9 +425,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
       --tw-duration: initial;
     }
   }

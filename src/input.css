@@ -1,38 +1,58 @@
-/* inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-/* noto font */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100..900&display=swap');
 
 @import "tailwindcss";
 
-
-
-@layer components {
-    /* * {
-        border: 1px solid red;
-    } */
-    body{
-        font-size: 14px;
-    }
-
-    .inter {
-        font-family: "Inter", sans-serif;
-    }
-
-    .noto,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Noto Serif", serif;
-    }
-}
-
+/* ======================
+   THEME TOKENS
+====================== */
 @theme {
     --color-primary: #000000;
     --color-secondary: #E95A08;
     --color-rgb-text: rgba(0, 0, 0, 0.5);
+}
+
+/* ======================
+   BASE LAYER
+====================== */
+@layer base {
+    body {
+        font-size: 14px;
+        font-family: "Inter", sans-serif;
+        color: var(--color-primary);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Noto Serif", serif;
+    }
+}
+
+/* ======================
+   COMPONENTS
+====================== */
+@layer components {
+
+    .font-inter {
+        font-family: "Inter", sans-serif;
+    }
+
+    .font-noto {
+        font-family: "Noto Serif", serif;
+    }
+
+    /* Section Header System */
+    .section-header-container {
+        @apply text-center mt-7 md:max-w-200 xl:max-w-225 xl:mt-30 mx-auto;
+    }
+
+    .section-header-title {
+        @apply text-secondary text-2xl font-bold xl:text-5xl;
+    }
+
+    .section-header-tagline {
+        @apply mt-3 xl:text-2xl;
+        color: var(--color-rgb-text);
+    }
 }
