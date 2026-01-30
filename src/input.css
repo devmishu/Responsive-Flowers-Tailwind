@@ -19,6 +19,9 @@
    BASE LAYER
 ====================== */
 @layer base {
+    *{
+        border: 1px solid black;
+    }
     body {
         font-size: 14px;
         font-family: "Inter", sans-serif;
